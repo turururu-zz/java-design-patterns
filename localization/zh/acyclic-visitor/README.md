@@ -1,8 +1,9 @@
 ---
 title: Acyclic Visitor
+shortTitle: Acyclic Visitor
 category: Behavioral
 language: zh
-tags:
+tag:
  - Extensibility
 ---
 
@@ -120,7 +121,7 @@ public class ConfigureForUnixVisitor implements ZoomVisitor {
 
 ## 类图
 
-![alt text](etc/acyclic-visitor.png "Acyclic Visitor")
+![alt text](./etc/acyclic-visitor.png "Acyclic Visitor")
 
 ## 适用性
 

@@ -39,16 +39,17 @@ public class DefaultCircuitBreaker implements CircuitBreaker {
   int failureCount;
   private final int failureThreshold;
   private State state;
-  private final long futureTime = 1000L * 1000 * 1000 * 1000;
+  // Future time offset, in nanoseconds
+  private final long futureTime = 1_000_000_000_000L;
 
   /**
    * Constructor to create an instance of Circuit Breaker.
    *
    * @param timeout          Timeout for the API request. Not necessary for this simple example
-   * @param failureThreshold Number of failures we receive from the depended service before changing
-   *                         state to 'OPEN'
-   * @param retryTimePeriod  Time period after which a new request is made to remote service for
-   *                         status check.
+   * @param failureThreshold Number of failures we receive from the depended on service before
+   *                         changing state to 'OPEN'
+   * @param retryTimePeriod  Time, in nanoseconds, period after which a new request is made to
+   *                         remote service for status check.
    */
   DefaultCircuitBreaker(RemoteService serviceToCall, long timeout, int failureThreshold,
       long retryTimePeriod) {
@@ -113,16 +114,15 @@ public class DefaultCircuitBreaker implements CircuitBreaker {
   public void setState(State state) {
     this.state = state;
     switch (state) {
-      case OPEN:
+      case OPEN -> {
         this.failureCount = failureThreshold;
         this.lastFailureTime = System.nanoTime();
-        break;
-      case HALF_OPEN:
+      }
+      case HALF_OPEN -> {
         this.failureCount = failureThreshold;
         this.lastFailureTime = System.nanoTime() - retryTimePeriod;
-        break;
-      default:
-        this.failureCount = 0;
+      }
+      default -> this.failureCount = 0;
     }
   }
 

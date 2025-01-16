@@ -31,7 +31,6 @@ import ch.qos.logback.core.read.ListAppender;
 import org.junit.jupiter.api.Test;
 import org.slf4j.LoggerFactory;
 import units.SergeantUnit;
-
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -55,7 +54,7 @@ class SergeantTest {
     sergeant.sergeantReady();
 
     List<ILoggingEvent> logsList = listAppender.list;
-    assertEquals("[Sergeant] " + sergeant.getUnit().getName() + " is ready!", logsList.get(0)
+    assertEquals("[Sergeant] " + sergeant.unit().getName() + " is ready!", logsList.get(0)
         .getMessage());
     assertEquals(Level.INFO, logsList.get(0)
         .getLevel());

@@ -1,8 +1,9 @@
 ---
 title: Factory
+shortTitle: Factory
 category: Creational
 language: zh
-tags:
+tag:
  - Gang of Four
 ---
 
@@ -106,7 +107,7 @@ This is Ferrari.
 
 ## 类图
 
-![alt text](etc/factory.urm.png "Factory pattern class diagram")
+![alt text](./etc/factory.urm.png "Factory pattern class diagram")
 
 ## 适用场景
 

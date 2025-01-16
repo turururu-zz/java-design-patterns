@@ -28,7 +28,6 @@ import com.iluwatar.leaderelection.AbstractInstance;
 import com.iluwatar.leaderelection.Message;
 import com.iluwatar.leaderelection.MessageManager;
 import java.util.Arrays;
-import java.util.stream.Collectors;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -38,7 +37,7 @@ import lombok.extern.slf4j.Slf4j;
  * check its health. If one certain instance finds the server done, it will send an election message
  * to the next alive instance in the ring, which contains its own ID. Then the next instance add its
  * ID into the message and pass it to the next. After all the alive instances' ID are add to the
- * message, the message is send back to the first instance and it will choose the instance with
+ * message, the message is send back to the first instance, and it will choose the instance with the
  * smallest ID to be the new leader, and then send a leader message to other instances to inform the
  * result.
  */
@@ -77,7 +76,7 @@ public class RingInstance extends AbstractInstance {
 
   /**
    * Process election message. If the local ID is contained in the ID list, the instance will select
-   * the alive instance with smallest ID to be the new leader, and send the leader inform message.
+   * the alive instance with the smallest ID to be the new leader, and send the leader inform message.
    * If not, it will add its local ID to the list and send the message to the next instance in the
    * ring.
    */
@@ -88,7 +87,7 @@ public class RingInstance extends AbstractInstance {
     var candidateList = Arrays.stream(content.trim().split(","))
         .map(Integer::valueOf)
         .sorted()
-        .collect(Collectors.toList());
+        .toList();
     if (candidateList.contains(localId)) {
       var newLeaderId = candidateList.get(0);
       LOGGER.info(INSTANCE + localId + " - New leader should be " + newLeaderId + ".");

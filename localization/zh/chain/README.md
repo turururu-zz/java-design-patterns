@@ -1,8 +1,9 @@
 ---
 title: Chain of responsibility
+shortTitle: Chain of responsibility
 category: Behavioral
 language: zh
-tags:
+tag:
  - Gang of Four
 ---
 
@@ -136,7 +137,7 @@ king.makeRequest(new Request(RequestType.COLLECT_TAX, "collect tax")); // Orc so
 ```
 
 ## 类图
-![alt text](etc/chain-of-responsibility.urm.png "Chain of Responsibility class diagram")
+![alt text](./etc/chain-of-responsibility.urm.png "Chain of Responsibility class diagram")
 
 ## 适用性
 使用责任链模式当

@@ -40,21 +40,20 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.LoggerFactory;
 
 /**
- * Date: 12/26/15 - 11:44 PM
+ * TreeTest
  *
- * @author Jeroen Meulemeester
  */
-public class TreeTest {
+class TreeTest {
 
   private InMemoryAppender appender;
 
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     appender = new InMemoryAppender();
   }
 
   @AfterEach
-  public void tearDown() {
+  void tearDown() {
     appender.stop();
   }
 

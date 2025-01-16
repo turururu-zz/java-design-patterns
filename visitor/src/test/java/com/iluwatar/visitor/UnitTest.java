@@ -24,7 +24,7 @@
  */
 package com.iluwatar.visitor;
 
-import static org.mockito.Matchers.eq;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
@@ -34,10 +34,9 @@ import java.util.function.Function;
 import org.junit.jupiter.api.Test;
 
 /**
- * Date: 12/30/15 - 18:59 PM. Test related to Units
+ * Test related to Units
  *
  * @param <U> Type of Unit
- * @author Jeroen Meulemeester
  */
 public abstract class UnitTest<U extends Unit> {
 

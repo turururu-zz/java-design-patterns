@@ -25,11 +25,10 @@
 package com.iluwatar.singleton;
 
 /**
- * Date: 12/29/15 - 19:22 PM.
+ * InitializingOnDemandHolderIdiomTest
  *
- * @author Jeroen Meulemeester
  */
-public class InitializingOnDemandHolderIdiomTest
+class InitializingOnDemandHolderIdiomTest
     extends SingletonTest<InitializingOnDemandHolderIdiom> {
 
   /**

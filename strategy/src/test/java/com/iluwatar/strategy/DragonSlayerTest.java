@@ -31,11 +31,10 @@ import static org.mockito.Mockito.verifyNoMoreInteractions;
 import org.junit.jupiter.api.Test;
 
 /**
- * Date: 12/29/15 - 10:50 PM.
+ * DragonSlayerTest
  *
- * @author Jeroen Meulemeester
  */
-public class DragonSlayerTest {
+class DragonSlayerTest {
 
   /**
    * Verify if the dragon slayer uses the strategy during battle.

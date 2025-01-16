@@ -25,11 +25,10 @@
 package com.iluwatar.singleton;
 
 /**
- * Date: 12/29/15 - 19:23 PM.
+ * IvoryTowerTest
  *
- * @author Jeroen Meulemeester
  */
-public class IvoryTowerTest extends SingletonTest<IvoryTower> {
+class IvoryTowerTest extends SingletonTest<IvoryTower> {
 
   /**
    * Create a new singleton test instance using the given 'getInstance' method.

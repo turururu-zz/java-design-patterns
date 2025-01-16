@@ -33,11 +33,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 /**
- * Date: 12/27/15 - 10:25 PM
+ * SimpleMessageTest
  *
- * @author Jeroen Meulemeester
  */
-public class SimpleMessageTest {
+class SimpleMessageTest {
 
   @Test
   void testGetHeaders() {
@@ -56,10 +55,6 @@ public class SimpleMessageTest {
   void testUnModifiableHeaders() {
     final var message = new SimpleMessage();
     final var headers = message.getHeaders();
-    assertThrows(UnsupportedOperationException.class, () -> {
-      headers.put(Message.Headers.SENDER, "test");
-    });
+    assertThrows(UnsupportedOperationException.class, () -> headers.put(Message.Headers.SENDER, "test"));
   }
-
-
 }

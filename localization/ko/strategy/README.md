@@ -1,8 +1,9 @@
 ---
 title: Strategy
+shortTitle: Strategy
 category: Behavioral
 language: ko
-tags:
+tag:
  - Gang of Four
 ---
 
@@ -122,7 +123,7 @@ public class LambdaStrategy {
 
   public enum Strategy implements DragonSlayingStrategy {
     MeleeStrategy(() -> LOGGER.info(
-        "With your Excalibur you severe the dragon's head!")),
+        "With your Excalibur you sever the dragon's head!")),
     ProjectileStrategy(() -> LOGGER.info(
         "You shoot the dragon with the magical crossbow and it falls dead on the ground!")),
     SpellStrategy(() -> LOGGER.info(
@@ -160,7 +161,7 @@ public class LambdaStrategy {
 
 ## 클래스 다이어그램
 
-![alt text](etc/strategy_urm.png "Strategy")
+![alt text](./etc/strategy_urm.png "Strategy")
 
 ## 적용 가능성
 

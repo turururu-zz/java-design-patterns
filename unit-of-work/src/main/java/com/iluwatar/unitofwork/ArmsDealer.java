@@ -35,7 +35,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 @RequiredArgsConstructor
-public class ArmsDealer implements IUnitOfWork<Weapon> {
+public class ArmsDealer implements UnitOfWork<Weapon> {
 
   private final Map<String, List<Weapon>> context;
   private final WeaponDatabase weaponDatabase;
@@ -73,7 +73,7 @@ public class ArmsDealer implements IUnitOfWork<Weapon> {
    */
   @Override
   public void commit() {
-    if (context == null || context.size() == 0) {
+    if (context == null || context.isEmpty()) {
       return;
     }
     LOGGER.info("Commit started");

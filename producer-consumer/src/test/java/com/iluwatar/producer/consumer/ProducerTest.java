@@ -26,7 +26,7 @@ package com.iluwatar.producer.consumer;
 
 import static java.time.Duration.ofMillis;
 import static org.junit.jupiter.api.Assertions.assertTimeout;
-import static org.mockito.Matchers.any;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
@@ -34,11 +34,10 @@ import static org.mockito.Mockito.verifyNoMoreInteractions;
 import org.junit.jupiter.api.Test;
 
 /**
- * Date: 12/28/15 - 12:12 AM
+ * ProducerTest
  *
- * @author Jeroen Meulemeester
  */
-public class ProducerTest {
+class ProducerTest {
 
   @Test
   void testProduce() {

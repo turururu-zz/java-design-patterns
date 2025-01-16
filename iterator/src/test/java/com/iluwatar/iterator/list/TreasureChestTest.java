@@ -33,11 +33,10 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
 /**
- * Date: 12/14/15 - 2:58 PM
+ * TreasureChestTest
  *
- * @author Jeroen Meulemeester
  */
-public class TreasureChestTest {
+class TreasureChestTest {
 
   /**
    * Create a list of all expected items in the chest.
@@ -65,7 +64,7 @@ public class TreasureChestTest {
    */
   @ParameterizedTest
   @MethodSource("dataProvider")
-  public void testIterator(Item expectedItem) {
+  void testIterator(Item expectedItem) {
     final var chest = new TreasureChest();
     final var iterator = chest.iterator(expectedItem.getType());
     assertNotNull(iterator);
@@ -92,7 +91,7 @@ public class TreasureChestTest {
    */
   @ParameterizedTest
   @MethodSource("dataProvider")
-  public void testGetItems(Item expectedItem) throws Exception {
+  void testGetItems(Item expectedItem) {
     final var chest = new TreasureChest();
     final var items = chest.getItems();
     assertNotNull(items);

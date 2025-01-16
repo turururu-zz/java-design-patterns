@@ -32,11 +32,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 /**
- * Date: 12/29/15 - 9:21 PM
+ * CharacterStepBuilderTest
  *
- * @author Jeroen Meulemeester
  */
-public class CharacterStepBuilderTest {
+class CharacterStepBuilderTest {
 
   /**
    * Build a new wizard {@link Character} and verify if it has the expected attributes

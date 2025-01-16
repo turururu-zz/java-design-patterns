@@ -32,21 +32,20 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * Date: 12/27/15 - 10:46 PM
+ * ImmutableStewTest
  *
- * @author Jeroen Meulemeester
  */
-public class ImmutableStewTest {
+class ImmutableStewTest {
 
   private InMemoryAppender appender;
 
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     appender = new InMemoryAppender();
   }
 
   @AfterEach
-  public void tearDown() {
+  void tearDown() {
     appender.stop();
   }
 

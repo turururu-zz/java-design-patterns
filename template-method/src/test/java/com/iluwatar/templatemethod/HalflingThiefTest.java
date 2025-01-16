@@ -31,11 +31,10 @@ import static org.mockito.Mockito.verifyNoMoreInteractions;
 import org.junit.jupiter.api.Test;
 
 /**
- * Date: 12/29/15 - 18:15 PM
+ * HalflingThiefTest
  *
- * @author Jeroen Meulemeester
  */
-public class HalflingThiefTest {
+class HalflingThiefTest {
 
   /**
    * Verify if the thief uses the provided stealing method

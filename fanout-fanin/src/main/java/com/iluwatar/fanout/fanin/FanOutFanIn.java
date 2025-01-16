@@ -28,10 +28,9 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.stream.Collectors;
 
 /**
- * FanOutFanIn class processes long running requests, when any of the processes gets over, result is
+ * FanOutFanIn class processes long-running requests, when any of the processes gets over, result is
  * passed over to the consumer or the callback function. Consumer will aggregate the results as they
  * keep on completing.
  */
@@ -54,7 +53,7 @@ public class FanOutFanIn {
             .map(
                 request ->
                     CompletableFuture.runAsync(() -> request.delayedSquaring(consumer), service))
-            .collect(Collectors.toList());
+            .toList();
 
     CompletableFuture.allOf(futures.toArray(new CompletableFuture[0])).join();
 

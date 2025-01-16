@@ -34,7 +34,7 @@ import org.slf4j.LoggerFactory;
 /**
  * App Test showing usage of circuit breaker.
  */
-public class AppTest {
+class AppTest {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(AppTest.class);
 
@@ -54,13 +54,13 @@ public class AppTest {
   private CircuitBreaker quickServiceCircuitBreaker;
 
   /**
-   * Setup the circuit breakers and services, where {@link DelayedRemoteService} will be start with
+   * Set up the circuit breakers and services, where {@link DelayedRemoteService} will be start with
    * a delay of 4 seconds and a {@link QuickRemoteService} responding healthy. Both services are
    * wrapped in a {@link DefaultCircuitBreaker} implementation with failure threshold of 1 failure
    * and retry time period of 2 seconds.
    */
   @BeforeEach
-  public void setupCircuitBreakers() {
+  void setupCircuitBreakers() {
     var delayedService = new DelayedRemoteService(System.nanoTime(), STARTUP_DELAY);
     //Set the circuit Breaker parameters
     delayedServiceCircuitBreaker = new DefaultCircuitBreaker(delayedService, 3000,
@@ -78,7 +78,7 @@ public class AppTest {
   }
 
   @Test
-  public void testFailure_OpenStateTransition() {
+  void testFailure_OpenStateTransition() {
     //Calling delayed service, which will be unhealthy till 4 seconds
     assertEquals("Delayed service is down", monitoringService.delayedServiceResponse());
     //As failure threshold is "1", the circuit breaker is changed to OPEN
@@ -93,7 +93,7 @@ public class AppTest {
   }
 
   @Test
-  public void testFailure_HalfOpenStateTransition() {
+  void testFailure_HalfOpenStateTransition() {
     //Calling delayed service, which will be unhealthy till 4 seconds
     assertEquals("Delayed service is down", monitoringService.delayedServiceResponse());
     //As failure threshold is "1", the circuit breaker is changed to OPEN
@@ -104,7 +104,7 @@ public class AppTest {
       LOGGER.info("Waiting 2s for delayed service to become responsive");
       Thread.sleep(2000);
     } catch (InterruptedException e) {
-      e.printStackTrace();
+      LOGGER.error("An error occurred: ", e);
     }
     //After 2 seconds, the circuit breaker should move to "HALF_OPEN" state and retry fetching response from service again
     assertEquals("HALF_OPEN", delayedServiceCircuitBreaker.getState());
@@ -112,7 +112,7 @@ public class AppTest {
   }
 
   @Test
-  public void testRecovery_ClosedStateTransition() {
+  void testRecovery_ClosedStateTransition() {
     //Calling delayed service, which will be unhealthy till 4 seconds
     assertEquals("Delayed service is down", monitoringService.delayedServiceResponse());
     //As failure threshold is "1", the circuit breaker is changed to OPEN
@@ -123,7 +123,7 @@ public class AppTest {
       LOGGER.info("Waiting 4s for delayed service to become responsive");
       Thread.sleep(4000);
     } catch (InterruptedException e) {
-      e.printStackTrace();
+      LOGGER.error("An error occurred: ", e);
     }
     //As retry period is 2 seconds (<4 seconds of wait), hence the circuit breaker should be back in HALF_OPEN state.
     assertEquals("HALF_OPEN", delayedServiceCircuitBreaker.getState());

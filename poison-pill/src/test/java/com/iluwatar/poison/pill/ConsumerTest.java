@@ -38,21 +38,20 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.LoggerFactory;
 
 /**
- * Date: 12/27/15 - 9:45 PM
+ * ConsumerTest
  *
- * @author Jeroen Meulemeester
  */
-public class ConsumerTest {
+class ConsumerTest {
 
   private InMemoryAppender appender;
 
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     appender = new InMemoryAppender(Consumer.class);
   }
 
   @AfterEach
-  public void tearDown() {
+  void tearDown() {
     appender.stop();
   }
 
@@ -92,7 +91,7 @@ public class ConsumerTest {
     return msg;
   }
 
-  private class InMemoryAppender extends AppenderBase<ILoggingEvent> {
+  private static class InMemoryAppender extends AppenderBase<ILoggingEvent> {
     private final List<ILoggingEvent> log = new LinkedList<>();
 
     public InMemoryAppender(Class clazz) {

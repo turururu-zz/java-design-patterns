@@ -1,8 +1,9 @@
 ---
 title: Adapter
+shortTitle: Adapter
 category: Structural
 language: ko
-tags:
+tag:
 - Gang of Four
 ---
 
@@ -93,7 +94,7 @@ captain.row();
 
 ## 클레스 다이어그램
 
-![alt text](etc/adapter.urm.png)
+![alt text](./etc/adapter.urm.png)
 
 ## 적용 가능성
 

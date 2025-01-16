@@ -29,7 +29,6 @@ import static org.mockito.Mockito.inOrder;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
-import static org.mockito.Mockito.verifyZeroInteractions;
 
 import com.iluwatar.observer.WeatherObserver;
 import com.iluwatar.observer.WeatherType;
@@ -39,21 +38,20 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * Date: 12/27/15 - 11:08 AM
+ * GWeatherTest
  *
- * @author Jeroen Meulemeester
  */
-public class GWeatherTest {
+class GWeatherTest {
 
   private InMemoryAppender appender;
 
   @BeforeEach
-  public void setUp() {
-    appender = new InMemoryAppender(GWeather.class);
+  void setUp() {
+    appender = new InMemoryAppender(GenWeather.class);
   }
 
   @AfterEach
-  public void tearDown() {
+  void tearDown() {
     appender.stop();
   }
 
@@ -65,9 +63,9 @@ public class GWeatherTest {
   void testAddRemoveObserver() {
     final var observer = mock(Race.class);
 
-    final var weather = new GWeather();
+    final var weather = new GenWeather();
     weather.addObserver(observer);
-    verifyZeroInteractions(observer);
+    verifyNoMoreInteractions(observer);
 
     weather.timePasses();
     assertEquals("The weather changed to rainy.", appender.getLastMessage());
@@ -87,7 +85,7 @@ public class GWeatherTest {
   @Test
   void testTimePasses() {
     final var observer = mock(Race.class);
-    final var weather = new GWeather();
+    final var weather = new GenWeather();
     weather.addObserver(observer);
 
     final var inOrder = inOrder(observer);

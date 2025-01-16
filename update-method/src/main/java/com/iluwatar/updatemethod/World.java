@@ -27,7 +27,6 @@ package com.iluwatar.updatemethod;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -74,7 +73,7 @@ public class World {
   }
 
   /**
-   * Update internal status. The update method pattern invoke udpate method for
+   * Update internal status. The update method pattern invoke update method for
    * each entity in the game.
    */
   private void update() {

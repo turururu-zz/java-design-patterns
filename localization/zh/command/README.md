@@ -1,8 +1,9 @@
 ---
 title: Command
+shortTitle: Command
 category: Behavioral
 language: zh
-tags:
+tag:
  - Gang of Four
 ---
 
@@ -34,8 +35,8 @@ public class Wizard {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(Wizard.class);
 
-  private final Deque<Command> undoStack = new LinkedList<>();
-  private final Deque<Command> redoStack = new LinkedList<>();
+  private final Deque<Runnable> undoStack = new LinkedList<>();
+  private final Deque<Runnable> redoStack = new LinkedList<>();
 
   public Wizard() {}
 
@@ -219,7 +220,7 @@ goblin.printStatus();
 ```
 
 ## 类图
-![alt text](etc/command.png "Command")
+![alt text](./etc/command.png "Command")
 
 ## 适用性
 使用命令模式当你想

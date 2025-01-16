@@ -1,8 +1,9 @@
 ---
 title: Business Delegate
+shortTitle: Business Delegate
 category: Structural
 language: zh
-tags:
+tag:
  - Decoupling
 ---
 
@@ -129,7 +130,7 @@ public class MobileClient {
 
 ## 类图
 
-![alt text](etc/business-delegate.urm.png "Business Delegate")
+![alt text](./etc/business-delegate.urm.png "Business Delegate")
 
 ## 相关模式
 

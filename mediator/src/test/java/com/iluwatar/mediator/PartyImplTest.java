@@ -27,16 +27,14 @@ package com.iluwatar.mediator;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
-import static org.mockito.Mockito.verifyZeroInteractions;
 
 import org.junit.jupiter.api.Test;
 
 /**
- * Date: 12/19/15 - 10:00 PM
+ * PartyImplTest
  *
- * @author Jeroen Meulemeester
  */
-public class PartyImplTest {
+class PartyImplTest {
 
   /**
    * Verify if a member is notified when it's joining a party. Generate an action and see if the
@@ -55,7 +53,7 @@ public class PartyImplTest {
     verify(partyMember2).joinedParty(party);
 
     party.act(partyMember1, Action.GOLD);
-    verifyZeroInteractions(partyMember1);
+    verifyNoMoreInteractions(partyMember1);
     verify(partyMember2).partyAction(Action.GOLD);
 
     verifyNoMoreInteractions(partyMember1, partyMember2);

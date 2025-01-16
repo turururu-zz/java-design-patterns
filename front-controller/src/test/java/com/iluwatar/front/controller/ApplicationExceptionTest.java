@@ -29,11 +29,10 @@ import static org.junit.jupiter.api.Assertions.assertSame;
 import org.junit.jupiter.api.Test;
 
 /**
- * Date: 12/13/15 - 1:35 PM
+ * ApplicationExceptionTest
  *
- * @author Jeroen Meulemeester
  */
-public class ApplicationExceptionTest {
+class ApplicationExceptionTest {
 
   @Test
   void testCause() {

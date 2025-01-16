@@ -36,11 +36,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * Date: 12/28/15 - 10:53 PM Test for Base Data Access Objects
+ * Test for Base Data Access Objects
  *
  * @param <E> Type of Base Entity
  * @param <D> Type of Dao Base Implementation
- * @author Jeroen Meulemeester
  */
 public abstract class BaseDaoTest<E extends BaseEntity, D extends DaoBaseImpl<E>> {
 
@@ -76,7 +75,7 @@ public abstract class BaseDaoTest<E extends BaseEntity, D extends DaoBaseImpl<E>
   }
 
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     for (int i = 0; i < INITIAL_COUNT; i++) {
       final var className = dao.persistentClass.getSimpleName();
       final var entityName = String.format("%s%d", className, ID_GENERATOR.incrementAndGet());
@@ -85,7 +84,7 @@ public abstract class BaseDaoTest<E extends BaseEntity, D extends DaoBaseImpl<E>
   }
 
   @AfterEach
-  public void tearDown() {
+  void tearDown() {
     HibernateUtil.dropSession();
   }
 

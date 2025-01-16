@@ -1,8 +1,9 @@
 ---
 title: Visitor
+shortTitle: Visitor
 category: Behavioral
 language: zh
-tags:
+tag:
  - Gang of Four
 ---
 
@@ -198,7 +199,7 @@ Good to see you commander
 
 ## Class diagram
 
-![alt text](etc/visitor_1.png "Visitor")
+![alt text](./etc/visitor_1.png "Visitor")
 
 ## 适用性
 

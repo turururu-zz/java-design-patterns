@@ -28,11 +28,10 @@ import java.util.stream.Stream;
 import org.junit.jupiter.params.provider.Arguments;
 
 /**
- * Date: 12/14/15 - 12:08 PM
+ * PlusExpressionTest
  *
- * @author Jeroen Meulemeester
  */
-public class PlusExpressionTest extends ExpressionTest<PlusExpression> {
+class PlusExpressionTest extends ExpressionTest<PlusExpression> {
 
   /**
    * Create a new set of test entries with the expected result

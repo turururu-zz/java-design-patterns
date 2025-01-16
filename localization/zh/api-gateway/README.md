@@ -1,8 +1,9 @@
 ---
 title: API Gateway
+shortTitle: API Gateway
 category: Architectural
 language: zh
-tags:
+tag:
   - Cloud distributed
   - Decoupling
   - Microservices
@@ -120,7 +121,7 @@ public class ApiGateway {
 ```
 
 ## 类图
-![alt text](etc/api-gateway.png "API Gateway")
+![alt text](./etc/api-gateway.png "API Gateway")
 
 ## 适用性
 

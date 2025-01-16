@@ -26,13 +26,11 @@ package com.iluwatar.activeobject;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * ActiveCreature class is the base of the active object example.
- * @author Noam Greenshtain
  *
  */
 public abstract class ActiveCreature {
@@ -77,8 +75,8 @@ public abstract class ActiveCreature {
    */
   public void eat() throws InterruptedException {
     requests.put(() -> {
-      logger.info("{} is eating!",name());
-      logger.info("{} has finished eating!",name());
+      logger.info("{} is eating!", name());
+      logger.info("{} has finished eating!", name());
     });
   }
 
@@ -88,7 +86,7 @@ public abstract class ActiveCreature {
    */
   public void roam() throws InterruptedException {
     requests.put(() ->
-        logger.info("{} has started to roam in the wastelands.",name())
+        logger.info("{} has started to roam in the wastelands.", name())
     );
   }
   

@@ -28,11 +28,10 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * Date: 12/27/15 - 12:07 PM
+ * HobbitsTest
  *
- * @author Jeroen Meulemeester
  */
-public class HobbitsTest extends WeatherObserverTest<Hobbits> {
+class HobbitsTest extends WeatherObserverTest<Hobbits> {
 
   @Override
   public Collection<Object[]> dataProvider() {

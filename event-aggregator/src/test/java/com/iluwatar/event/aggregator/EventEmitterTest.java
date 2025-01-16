@@ -24,24 +24,21 @@
  */
 package com.iluwatar.event.aggregator;
 
-import static org.mockito.Matchers.eq;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
-import static org.mockito.Mockito.verifyZeroInteractions;
 
 import java.util.Objects;
 import java.util.function.BiFunction;
-import java.util.function.Function;
 import java.util.function.Supplier;
 import org.junit.jupiter.api.Test;
 
 /**
- * Date: 12/12/15 - 10:58 PM Tests for Event Emitter
+ * Tests for Event Emitter
  *
  * @param <E> Type of Event Emitter
- * @author Jeroen Meulemeester
  */
 abstract class EventEmitterTest<E extends EventEmitter> {
 
@@ -111,7 +108,7 @@ abstract class EventEmitterTest<E extends EventEmitter> {
         }
       } else {
         // On any other normal day, the observers should have received nothing at all
-        verifyZeroInteractions(observers);
+        verifyNoMoreInteractions(observers);
       }
     }
 

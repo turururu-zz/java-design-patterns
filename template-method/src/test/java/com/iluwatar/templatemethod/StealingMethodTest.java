@@ -38,22 +38,21 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.LoggerFactory;
 
 /**
- * Date: 12/30/15 - 18:12 PM
+ * StealingMethodTest
  *
  * @param <M> Type of StealingMethod
- * @author Jeroen Meulemeester
  */
 public abstract class StealingMethodTest<M extends StealingMethod> {
 
   private InMemoryAppender appender;
 
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     appender = new InMemoryAppender();
   }
 
   @AfterEach
-  public void tearDown() {
+  void tearDown() {
     appender.stop();
   }
 
@@ -146,7 +145,7 @@ public abstract class StealingMethodTest<M extends StealingMethod> {
     assertEquals(3, appender.getLogSize());
   }
 
-  private class InMemoryAppender extends AppenderBase<ILoggingEvent> {
+  private static class InMemoryAppender extends AppenderBase<ILoggingEvent> {
     private final List<ILoggingEvent> log = new LinkedList<>();
 
     public InMemoryAppender() {

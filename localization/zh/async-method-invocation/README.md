@@ -1,8 +1,9 @@
 ---
 title: Async Method Invocation
+shortTitle: Async Method Invocation
 category: Concurrency
 language: zh
-tags:
+tag:
  - Reactive
 ---
 
@@ -139,7 +140,7 @@ public static void main(String[] args) throws Exception {
 
 # 类图
 
-![alt text](etc/async-method-invocation.png "Async Method Invocation")
+![alt text](./etc/async-method-invocation.png "Async Method Invocation")
 
 ## 适用性
 

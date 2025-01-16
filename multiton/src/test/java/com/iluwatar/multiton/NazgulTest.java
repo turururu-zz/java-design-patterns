@@ -31,11 +31,10 @@ import static org.junit.jupiter.api.Assertions.assertSame;
 import org.junit.jupiter.api.Test;
 
 /**
- * Date: 12/22/15 - 22:28 AM
+ * NazgulTest
  *
- * @author Jeroen Meulemeester
  */
-public class NazgulTest {
+class NazgulTest {
 
   /**
    * Verify if {@link Nazgul#getInstance(NazgulName)} returns the correct Nazgul multiton instance

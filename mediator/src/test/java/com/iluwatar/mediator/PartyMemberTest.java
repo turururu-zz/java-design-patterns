@@ -43,11 +43,10 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.slf4j.LoggerFactory;
 
 /**
- * Date: 12/19/15 - 10:13 PM
+ * PartyMemberTest
  *
- * @author Jeroen Meulemeester
  */
-public class PartyMemberTest {
+class PartyMemberTest {
 
   static Stream<Arguments> dataProvider() {
     return Stream.of(
@@ -61,12 +60,12 @@ public class PartyMemberTest {
   private InMemoryAppender appender;
 
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     appender = new InMemoryAppender(PartyMemberBase.class);
   }
 
   @AfterEach
-  public void tearDown() {
+  void tearDown() {
     appender.stop();
   }
 
@@ -75,12 +74,12 @@ public class PartyMemberTest {
    */
   @ParameterizedTest
   @MethodSource("dataProvider")
-  public void testPartyAction(Supplier<PartyMember> memberSupplier) {
+  void testPartyAction(Supplier<PartyMember> memberSupplier) {
     final var member = memberSupplier.get();
 
     for (final var action : Action.values()) {
       member.partyAction(action);
-      assertEquals(member.toString() + " " + action.getDescription(), appender.getLastMessage());
+      assertEquals(member + " " + action.getDescription(), appender.getLastMessage());
     }
 
     assertEquals(Action.values().length, appender.getLogSize());
@@ -91,7 +90,7 @@ public class PartyMemberTest {
    */
   @ParameterizedTest
   @MethodSource("dataProvider")
-  public void testAct(Supplier<PartyMember> memberSupplier) {
+  void testAct(Supplier<PartyMember> memberSupplier) {
     final var member = memberSupplier.get();
 
     member.act(Action.GOLD);
@@ -99,11 +98,11 @@ public class PartyMemberTest {
 
     final var party = mock(Party.class);
     member.joinedParty(party);
-    assertEquals(member.toString() + " joins the party", appender.getLastMessage());
+    assertEquals(member + " joins the party", appender.getLastMessage());
 
     for (final var action : Action.values()) {
       member.act(action);
-      assertEquals(member.toString() + " " + action.toString(), appender.getLastMessage());
+      assertEquals(member + " " + action.toString(), appender.getLastMessage());
       verify(party).act(member, action);
     }
 
@@ -115,7 +114,7 @@ public class PartyMemberTest {
    */
   @ParameterizedTest
   @MethodSource("dataProvider")
-  public void testToString(Supplier<PartyMember> memberSupplier) {
+  void testToString(Supplier<PartyMember> memberSupplier) {
     final var member = memberSupplier.get();
     final var memberClass = member.getClass();
     assertEquals(memberClass.getSimpleName(), member.toString());

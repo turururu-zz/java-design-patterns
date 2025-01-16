@@ -28,14 +28,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import org.junit.jupiter.api.Test;
 
 /**
- * Date: 12/12/15 - 10:54 PM
+ * AlchemistShopTest
  *
- * @author Jeroen Meulemeester
  */
-public class AlchemistShopTest {
+class AlchemistShopTest {
 
   @Test
   void testShop() {
@@ -55,8 +55,6 @@ public class AlchemistShopTest {
 
     // There are 13 potion instances, but only 5 unique instance types
     assertEquals(13, allPotions.size());
-    assertEquals(5, allPotions.stream().map(System::identityHashCode).distinct().count());
-
+    assertEquals(5, new HashSet<>(allPotions).size());
   }
-
 }

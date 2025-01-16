@@ -24,7 +24,7 @@
  */
 package com.iluwatar.flux.view;
 
-import static org.mockito.Matchers.any;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -39,11 +39,10 @@ import com.iluwatar.flux.store.Store;
 import org.junit.jupiter.api.Test;
 
 /**
- * Date: 12/12/15 - 10:31 PM
+ * MenuViewTest
  *
- * @author Jeroen Meulemeester
  */
-public class MenuViewTest {
+class MenuViewTest {
 
   @Test
   void testStoreChanged() {

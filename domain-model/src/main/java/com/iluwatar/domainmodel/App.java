@@ -29,7 +29,6 @@ import static org.joda.money.CurrencyUnit.USD;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import javax.sql.DataSource;
-
 import org.h2.jdbcx.JdbcDataSource;
 import org.joda.money.Money;
 
@@ -50,7 +49,7 @@ import org.joda.money.Money;
  */
 public class App {
 
-  public static final String H2_DB_URL = "jdbc:h2:~/test";
+  public static final String H2_DB_URL = "jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1";
 
   public static final String CREATE_SCHEMA_SQL =
       "CREATE TABLE CUSTOMERS (name varchar primary key, money decimal);"
@@ -60,8 +59,8 @@ public class App {
           + "customer_name varchar references CUSTOMERS(name));";
 
   public static final String DELETE_SCHEMA_SQL =
-      "DROP TABLE CUSTOMERS IF EXISTS;"
-          + "DROP TABLE PURCHASES IF EXISTS;"
+      "DROP TABLE PURCHASES IF EXISTS;"
+          + "DROP TABLE CUSTOMERS IF EXISTS;"
           + "DROP TABLE PRODUCTS IF EXISTS;";
 
   /**

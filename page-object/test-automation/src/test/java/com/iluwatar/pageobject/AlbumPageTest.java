@@ -26,19 +26,19 @@ package com.iluwatar.pageobject;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import com.gargoylesoftware.htmlunit.WebClient;
+import org.htmlunit.WebClient;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
  * Test Album Page Operations
  */
-public class AlbumPageTest {
+class AlbumPageTest {
 
   private final AlbumPage albumPage = new AlbumPage(new WebClient());
 
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     albumPage.navigateToPage();
   }
 

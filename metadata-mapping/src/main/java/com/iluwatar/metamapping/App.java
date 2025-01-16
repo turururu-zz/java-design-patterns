@@ -56,13 +56,12 @@ public class App {
    * Program entry point.
    *
    * @param args command line args.
-   * @throws Exception if any error occurs.
    */
-  public static void main(String[] args)  throws Exception {
+  public static void main(String[] args) {
     // get service
     var userService = new UserService();
     // use create service to add users
-    for (var user: generateSampleUsers()) {
+    for (var user : generateSampleUsers()) {
       var id = userService.createUser(user);
       LOGGER.info("Add user" + user + "at" + id + ".");
     }

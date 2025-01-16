@@ -29,11 +29,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 /**
- * Date: 12/20/15 - 2:10 PM
+ * GiantModelTest
  *
- * @author Jeroen Meulemeester
  */
-public class GiantModelTest {
+class GiantModelTest {
 
   /**
    * Verify if the health value is set properly though the constructor and setter

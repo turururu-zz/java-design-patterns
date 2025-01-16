@@ -1,8 +1,9 @@
 ---
 title: Converter
+shortTitle: Converter
 category: Creational
 language: zh
-tags:
+tag:
  - Decoupling
 ---
 
@@ -83,7 +84,7 @@ var user = userConverter.convertFromDto(dtoUser);
 
 ## 类图
 
-![alt text](etc/converter.png "Converter Pattern")
+![alt text](./etc/converter.png "Converter Pattern")
 
 ## 适用性
 

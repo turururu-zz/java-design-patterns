@@ -30,7 +30,6 @@ import com.iluwatar.leaderelection.Message;
 import com.iluwatar.leaderelection.MessageType;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * Implementation of BullyMessageManager.
@@ -53,8 +52,7 @@ public class BullyMessageManager extends AbstractMessageManager {
   @Override
   public boolean sendHeartbeatMessage(int leaderId) {
     var leaderInstance = instanceMap.get(leaderId);
-    var alive = leaderInstance.isAlive();
-    return alive;
+    return leaderInstance.isAlive();
   }
 
   /**
@@ -71,7 +69,7 @@ public class BullyMessageManager extends AbstractMessageManager {
       return true;
     } else {
       var electionMessage = new Message(MessageType.ELECTION_INVOKE, "");
-      candidateList.stream().forEach((i) -> instanceMap.get(i).onMessage(electionMessage));
+      candidateList.forEach((i) -> instanceMap.get(i).onMessage(electionMessage));
       return false;
     }
   }
@@ -115,7 +113,7 @@ public class BullyMessageManager extends AbstractMessageManager {
     return instanceMap.keySet()
         .stream()
         .filter((i) -> i < currentId && instanceMap.get(i).isAlive())
-        .collect(Collectors.toList());
+        .toList();
   }
 
 }

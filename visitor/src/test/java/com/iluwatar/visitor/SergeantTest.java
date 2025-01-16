@@ -24,15 +24,14 @@
  */
 package com.iluwatar.visitor;
 
-import static org.mockito.Matchers.eq;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.verify;
 
 /**
- * Date: 12/30/15 - 19:45 PM.
+ * SergeantTest
  *
- * @author Jeroen Meulemeester
  */
-public class SergeantTest extends UnitTest<Sergeant> {
+class SergeantTest extends UnitTest<Sergeant> {
 
   /**
    * Create a new test instance for the given {@link Sergeant}.

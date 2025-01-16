@@ -1,8 +1,9 @@
 ---
 title: Composite
+shortTitle: Composite
 category: Structural
 language: zh
-tags:
+tag:
  - Gang of Four
 ---
 
@@ -151,7 +152,7 @@ elfMessage.print(); // Much wind pours from your mouth.
 
 ## 类图
 
-![alt text](etc/composite.urm.png "Composite class diagram")
+![alt text](./etc/composite.urm.png "Composite class diagram")
 
 ## 适用性
 

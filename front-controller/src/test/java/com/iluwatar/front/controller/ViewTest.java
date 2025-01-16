@@ -34,21 +34,20 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
 /**
- * Date: 12/13/15 - 1:39 PM
+ * ViewTest
  *
- * @author Jeroen Meulemeester
  */
-public class ViewTest {
+class ViewTest {
 
   private InMemoryAppender appender;
 
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     appender = new InMemoryAppender();
   }
 
   @AfterEach
-  public void tearDown() {
+  void tearDown() {
     appender.stop();
   }
 
@@ -66,7 +65,7 @@ public class ViewTest {
    */
   @ParameterizedTest
   @MethodSource("dataProvider")
-  public void testDisplay(View view, String displayMessage) {
+  void testDisplay(View view, String displayMessage) {
     assertEquals(0, appender.getLogSize());
     view.display();
     assertEquals(displayMessage, appender.getLastMessage());

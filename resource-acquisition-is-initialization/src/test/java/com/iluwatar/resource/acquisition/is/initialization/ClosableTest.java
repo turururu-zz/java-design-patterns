@@ -37,21 +37,20 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.LoggerFactory;
 
 /**
- * Date: 12/28/15 - 9:31 PM
+ * ClosableTest
  *
- * @author Jeroen Meulemeester
  */
 class ClosableTest {
 
   private InMemoryAppender appender;
 
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     appender = new InMemoryAppender();
   }
 
   @AfterEach
-  public void tearDown() {
+  void tearDown() {
     appender.stop();
   }
 
@@ -68,7 +67,7 @@ class ClosableTest {
   /**
    * Logging Appender Implementation
    */
-  public class InMemoryAppender extends AppenderBase<ILoggingEvent> {
+  static class InMemoryAppender extends AppenderBase<ILoggingEvent> {
     private final List<ILoggingEvent> log = new LinkedList<>();
 
     public InMemoryAppender() {
@@ -85,5 +84,4 @@ class ClosableTest {
       return log.stream().anyMatch(event -> event.getMessage().equals(message));
     }
   }
-
 }

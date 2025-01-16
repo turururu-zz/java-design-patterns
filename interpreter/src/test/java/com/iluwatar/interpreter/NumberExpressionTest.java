@@ -32,11 +32,10 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 /**
- * Date: 12/14/15 - 12:08 PM
+ * NumberExpressionTest
  *
- * @author Jeroen Meulemeester
  */
-public class NumberExpressionTest extends ExpressionTest<NumberExpression> {
+class NumberExpressionTest extends ExpressionTest<NumberExpression> {
 
   /**
    * Create a new set of test entries with the expected result
@@ -60,7 +59,7 @@ public class NumberExpressionTest extends ExpressionTest<NumberExpression> {
    */
   @ParameterizedTest
   @MethodSource("expressionProvider")
-  public void testFromString(NumberExpression first) throws Exception {
+  void testFromString(NumberExpression first) {
     final var expectedValue = first.interpret();
     final var testStringValue = String.valueOf(expectedValue);
     final var numberExpression = new NumberExpression(testStringValue);

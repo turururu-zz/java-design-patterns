@@ -31,7 +31,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-public class CustomerRegistryTest {
+class CustomerRegistryTest {
 
   private static CustomerRegistry customerRegistry;
 
@@ -41,7 +41,7 @@ public class CustomerRegistryTest {
   }
 
   @Test
-  public void shouldBeAbleToAddAndQueryCustomerObjectFromRegistry() {
+  void shouldBeAbleToAddAndQueryCustomerObjectFromRegistry() {
     Customer john = new Customer("1", "john");
     Customer julia = new Customer("2", "julia");
 
@@ -50,13 +50,13 @@ public class CustomerRegistryTest {
 
     Customer customerWithId1 = customerRegistry.getCustomer("1");
     assertNotNull(customerWithId1);
-    assertEquals("1", customerWithId1.getId());
-    assertEquals("john", customerWithId1.getName());
+    assertEquals("1", customerWithId1.id());
+    assertEquals("john", customerWithId1.name());
 
     Customer customerWithId2 = customerRegistry.getCustomer("2");
     assertNotNull(customerWithId2);
-    assertEquals("2", customerWithId2.getId());
-    assertEquals("julia", customerWithId2.getName());
+    assertEquals("2", customerWithId2.id());
+    assertEquals("julia", customerWithId2.name());
   }
 
   @Test

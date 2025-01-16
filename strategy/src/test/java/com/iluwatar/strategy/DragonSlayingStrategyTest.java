@@ -39,11 +39,10 @@ import org.junit.jupiter.params.provider.MethodSource;
 import org.slf4j.LoggerFactory;
 
 /**
- * Date: 12/29/15 - 10:58 PM.
+ * DragonSlayingStrategyTest
  *
- * @author Jeroen Meulemeester
  */
-public class DragonSlayingStrategyTest {
+class DragonSlayingStrategyTest {
 
   /**
    * Assembles test parameters.
@@ -70,12 +69,12 @@ public class DragonSlayingStrategyTest {
   private InMemoryAppender appender;
 
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     appender = new InMemoryAppender();
   }
 
   @AfterEach
-  public void tearDown() {
+  void tearDown() {
     appender.stop();
   }
 
@@ -85,13 +84,13 @@ public class DragonSlayingStrategyTest {
    */
   @ParameterizedTest
   @MethodSource("dataProvider")
-  public void testExecute(DragonSlayingStrategy strategy, String expectedResult) {
+  void testExecute(DragonSlayingStrategy strategy, String expectedResult) {
     strategy.execute();
     assertEquals(expectedResult, appender.getLastMessage());
     assertEquals(1, appender.getLogSize());
   }
 
-  private class InMemoryAppender extends AppenderBase<ILoggingEvent> {
+  private static class InMemoryAppender extends AppenderBase<ILoggingEvent> {
     private final List<ILoggingEvent> log = new LinkedList<>();
 
     public InMemoryAppender() {

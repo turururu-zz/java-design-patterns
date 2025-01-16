@@ -29,11 +29,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 /**
- * Date: 12/13/15 - 2:57 PM
+ * OrderTest
  *
- * @author Jeroen Meulemeester
  */
-public class OrderTest {
+class OrderTest {
 
   private static final String EXPECTED_VALUE = "test";
 

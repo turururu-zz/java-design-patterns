@@ -32,11 +32,10 @@ import static org.mockito.Mockito.verify;
 import org.junit.jupiter.api.Test;
 
 /**
- * Date: 12/27/15 - 11:01 PM
+ * ConsumerTest
  *
- * @author Jeroen Meulemeester
  */
-public class ConsumerTest {
+class ConsumerTest {
 
   private static final int ITEM_COUNT = 5;
 

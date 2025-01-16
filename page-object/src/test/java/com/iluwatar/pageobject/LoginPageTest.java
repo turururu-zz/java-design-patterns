@@ -26,7 +26,7 @@ package com.iluwatar.pageobject;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import com.gargoylesoftware.htmlunit.WebClient;
+import org.htmlunit.WebClient;
 import com.iluwatar.pageobject.pages.LoginPage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -34,12 +34,12 @@ import org.junit.jupiter.api.Test;
 /**
  * Test Login Page Object
  */
-public class LoginPageTest {
+class LoginPageTest {
 
   private final LoginPage loginPage = new LoginPage(new WebClient());
 
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     loginPage.navigateToPage();
   }
 

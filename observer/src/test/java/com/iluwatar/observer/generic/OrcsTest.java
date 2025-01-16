@@ -25,16 +25,14 @@
 package com.iluwatar.observer.generic;
 
 import com.iluwatar.observer.WeatherType;
-
 import java.util.Collection;
 import java.util.List;
 
 /**
- * Date: 12/27/15 - 12:07 PM
+ * OrcsTest
  *
- * @author Jeroen Meulemeester
  */
-public class OrcsTest extends ObserverTest<GOrcs> {
+class OrcsTest extends ObserverTest<GenOrcs> {
 
   @Override
   public Collection<Object[]> dataProvider() {
@@ -50,7 +48,7 @@ public class OrcsTest extends ObserverTest<GOrcs> {
    * Create a new test with the given weather and expected response
    */
   public OrcsTest() {
-    super(GOrcs::new);
+    super(GenOrcs::new);
   }
 
 }

@@ -24,7 +24,7 @@
  */
 package com.iluwatar.halfsynchalfasync;
 
-import static org.mockito.Matchers.eq;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.inOrder;
 import static org.mockito.Mockito.mock;
@@ -40,16 +40,15 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * Date: 12/12/15 - 11:15 PM
+ * AsynchronousServiceTest
  *
- * @author Jeroen Meulemeester
  */
-public class AsynchronousServiceTest {
+class AsynchronousServiceTest {
   private AsynchronousService service;
   private AsyncTask<Object> task;
 
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     service = new AsynchronousService(new LinkedBlockingQueue<>());
     task = mock(AsyncTask.class);
   }

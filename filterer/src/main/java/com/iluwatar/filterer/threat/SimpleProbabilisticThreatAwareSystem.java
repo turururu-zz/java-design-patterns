@@ -27,7 +27,6 @@ package com.iluwatar.filterer.threat;
 import com.iluwatar.filterer.domain.Filterer;
 import java.util.List;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
@@ -76,7 +75,7 @@ public class SimpleProbabilisticThreatAwareSystem implements ProbabilisticThreat
       final Predicate<? super ProbableThreat> predicate) {
     return this.threats.stream()
         .filter(predicate)
-        .collect(Collectors.toUnmodifiableList());
+        .toList();
   }
 
 }

@@ -34,11 +34,10 @@ import com.iluwatar.specification.property.Movement;
 import org.junit.jupiter.api.Test;
 
 /**
- * Date: 12/29/15 - 7:37 PM
+ * MovementSelectorTest
  *
- * @author Jeroen Meulemeester
  */
-public class MovementSelectorTest {
+class MovementSelectorTest {
 
   /**
    * Verify if the movement selector gives the correct results.

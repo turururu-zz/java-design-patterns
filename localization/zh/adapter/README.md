@@ -1,8 +1,9 @@
 ---
 title: Adapter
+shortTitle: Adapter
 category: Structural
 language: zh
-tags:
+tag:
  - Gang of Four
 ---
 
@@ -91,7 +92,7 @@ captain.row();
 ```
 
 ## 类图
-![alt text](etc/adapter.urm.png "Adapter class diagram")
+![alt text](./etc/adapter.urm.png "Adapter class diagram")
 
 
 ## 应用

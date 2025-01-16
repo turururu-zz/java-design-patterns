@@ -25,11 +25,10 @@
 package com.iluwatar.templatemethod;
 
 /**
- * Date: 12/30/15 - 18:12 PM
+ * HitAndRunMethodTest
  *
- * @author Jeroen Meulemeester
  */
-public class HitAndRunMethodTest extends StealingMethodTest<HitAndRunMethod> {
+class HitAndRunMethodTest extends StealingMethodTest<HitAndRunMethod> {
 
   /**
    * Create a new test for the {@link HitAndRunMethod}

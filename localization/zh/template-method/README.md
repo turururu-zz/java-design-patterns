@@ -1,8 +1,9 @@
 ---
 title: Template method
+shortTitle: Template method
 category: Behavioral
 language: zh
-tags:
+tag:
  - Gang of Four
 ---
 
@@ -116,7 +117,7 @@ public class HalflingThief {
 ```
 
 ## 类图
-![alt text](etc/template_method_urm.png "Template Method")
+![alt text](./etc/template_method_urm.png "Template Method")
 
 ## 适用性
 

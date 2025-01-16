@@ -25,11 +25,10 @@
 package com.iluwatar.singleton;
 
 /**
- * Date: 12/29/15 - 19:26 PM.
+ * ThreadSafeLazyLoadedIvoryTowerTest
  *
- * @author Jeroen Meulemeester
  */
-public class ThreadSafeLazyLoadedIvoryTowerTest
+class ThreadSafeLazyLoadedIvoryTowerTest
     extends SingletonTest<ThreadSafeLazyLoadedIvoryTower> {
 
   /**

@@ -38,10 +38,8 @@ import java.util.function.Supplier;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Date: 12/27/15 - 11:44 AM
  * Test for Observers
  * @param <O> Type of Observer
- * @author Jeroen Meulemeester
  */
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public abstract class ObserverTest<O extends Observer<?, ?, WeatherType>> {
@@ -49,12 +47,12 @@ public abstract class ObserverTest<O extends Observer<?, ?, WeatherType>> {
   private InMemoryAppender appender;
 
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     appender = new InMemoryAppender();
   }
 
   @AfterEach
-  public void tearDown() {
+  void tearDown() {
     appender.stop();
   }
 
@@ -79,7 +77,7 @@ public abstract class ObserverTest<O extends Observer<?, ?, WeatherType>> {
    */
   @ParameterizedTest
   @MethodSource("dataProvider")
-  public void testObserver(WeatherType weather, String response) {
+  void testObserver(WeatherType weather, String response) {
     final var observer = this.factory.get();
     assertEquals(0, appender.getLogSize());
 

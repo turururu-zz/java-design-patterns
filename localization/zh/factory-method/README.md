@@ -1,8 +1,9 @@
 ---
 title: Factory Method
+shortTitle: Factory Method
 category: Creational
 language: zh
-tags:
+tag:
  - Extensibility
  - Gang Of Four
 ---
@@ -60,7 +61,7 @@ blacksmith.manufactureWeapon(WeaponType.AXE);
 ```
 
 ## 类图
-![alt text](etc/factory-method.urm.png "Factory Method pattern class diagram")
+![alt text](./etc/factory-method.urm.png "Factory Method pattern class diagram")
 
 ## 适用性
 使用工厂方法模式当

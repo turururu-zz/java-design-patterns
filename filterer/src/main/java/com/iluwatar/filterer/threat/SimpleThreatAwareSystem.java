@@ -28,7 +28,6 @@ import com.iluwatar.filterer.domain.Filterer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
@@ -74,8 +73,7 @@ public class SimpleThreatAwareSystem implements ThreatAwareSystem {
 
   private List<Threat> filteredItems(Predicate<? super Threat> predicate) {
     return this.issues.stream()
-        .filter(predicate)
-        .collect(Collectors.toUnmodifiableList());
+            .filter(predicate).toList();
   }
 
 }

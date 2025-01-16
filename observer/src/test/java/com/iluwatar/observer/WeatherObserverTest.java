@@ -24,25 +24,20 @@
  */
 package com.iluwatar.observer;
 
-import com.iluwatar.observer.utils.InMemoryAppender;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import com.iluwatar.observer.utils.InMemoryAppender;
 import java.util.Collection;
 import java.util.function.Supplier;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 /**
- * Date: 12/27/15 - 11:44 AM
  * Weather Observer Tests
  * @param <O> Type of WeatherObserver
- * @author Jeroen Meulemeester
  */
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public abstract class WeatherObserverTest<O extends WeatherObserver> {
@@ -50,12 +45,12 @@ public abstract class WeatherObserverTest<O extends WeatherObserver> {
   private InMemoryAppender appender;
 
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     appender = new InMemoryAppender();
   }
 
   @AfterEach
-  public void tearDown() {
+  void tearDown() {
     appender.stop();
   }
 
@@ -80,7 +75,7 @@ public abstract class WeatherObserverTest<O extends WeatherObserver> {
    */
   @ParameterizedTest
   @MethodSource("dataProvider")
-  public void testObserver(WeatherType weather, String response) {
+  void testObserver(WeatherType weather, String response) {
     final var observer = this.factory.get();
     assertEquals(0, appender.getLogSize());
 

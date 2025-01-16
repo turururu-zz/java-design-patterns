@@ -38,21 +38,20 @@ import org.junit.jupiter.api.Test;
 import org.slf4j.LoggerFactory;
 
 /**
- * Date: 12/20/15 - 2:04 PM
+ * GiantViewTest
  *
- * @author Jeroen Meulemeester
  */
-public class GiantViewTest {
+class GiantViewTest {
 
   private InMemoryAppender appender;
 
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     appender = new InMemoryAppender(GiantView.class);
   }
 
   @AfterEach
-  public void tearDown() {
+  void tearDown() {
     appender.stop();
   }
 

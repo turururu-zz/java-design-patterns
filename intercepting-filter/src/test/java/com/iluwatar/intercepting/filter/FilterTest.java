@@ -34,11 +34,10 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
 /**
- * Date: 12/13/15 - 2:17 PM
+ * FilterTest
  *
- * @author Jeroen Meulemeester
  */
-public class FilterTest {
+class FilterTest {
 
   private static final Order PERFECT_ORDER =
       new Order("name", "12345678901", "addr", "dep", "order");
@@ -89,7 +88,7 @@ public class FilterTest {
 
   @ParameterizedTest
   @MethodSource("getTestData")
-  public void testExecute(Filter filter, Order order, String expectedResult) {
+  void testExecute(Filter filter, Order order, String expectedResult) {
     final var result = filter.execute(order);
     assertNotNull(result);
     assertEquals(expectedResult, result.trim());
@@ -97,7 +96,7 @@ public class FilterTest {
 
   @ParameterizedTest
   @MethodSource("getTestData")
-  public void testNext(Filter filter) {
+  void testNext(Filter filter) {
     assertNull(filter.getNext());
     assertSame(filter, filter.getLast());
   }

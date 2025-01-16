@@ -1,8 +1,9 @@
 ---
 title: Ambassador
+shortTitle: Ambassador
 category: Structural
 language: zh
-tags:
+tag:
   - Decoupling
   - Cloud distributed
 ---
@@ -164,7 +165,7 @@ Service result: -1
 
 ## 类图
 
-![alt text](etc/ambassador.urm.png "Ambassador class diagram")
+![alt text](./etc/ambassador.urm.png "Ambassador class diagram")
 
 ## 适用性
 

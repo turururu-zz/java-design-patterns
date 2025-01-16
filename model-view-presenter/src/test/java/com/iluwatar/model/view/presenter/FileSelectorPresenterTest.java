@@ -36,7 +36,7 @@ import org.junit.jupiter.api.Test;
  * This test case is responsible for testing our application by taking advantage of the
  * Model-View-Controller architectural pattern.
  */
-public class FileSelectorPresenterTest {
+class FileSelectorPresenterTest {
 
   /**
    * The Presenter component.
@@ -57,7 +57,7 @@ public class FileSelectorPresenterTest {
    * Initializes the components of the test case.
    */
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     this.stub = new FileSelectorStub();
     this.loader = new FileLoader();
     presenter = new FileSelectorPresenter(this.stub);
@@ -144,4 +144,16 @@ public class FileSelectorPresenterTest {
 
     assertFalse(stub.isOpened());
   }
+
+  @Test
+  void testNullFile() {
+    stub.setFileName(null);
+    presenter.start();
+    presenter.fileNameChanged();
+    presenter.confirmed();
+
+    assertFalse(loader.isLoaded());
+    assertFalse(stub.dataDisplayed());
+  }
+
 }
